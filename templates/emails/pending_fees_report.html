@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Pending Fees Report</title>
+</head>
+<body style="font-family: Arial, sans-serif; background:#f4f4f4; padding:20px;">
+    <div style="max-width:800px; margin:auto; background:#ffffff; padding:20px; border-radius:8px;">
+        <h2 style="text-align:center;">All Students Pending Fees Report</h2>
+
+        <p>Hello,</p>
+        <p>Below is the list of all students and their fee details.</p>
+
+        <table style="width:100%; border-collapse:collapse; margin-top:20px;">
+            <thead>
+                <tr style="background:#eeeeee;">
+                    <th style="border:1px solid #ccc; padding:8px;">No</th>
+                    <th style="border:1px solid #ccc; padding:8px;">Student Name</th>
+                    <th style="border:1px solid #ccc; padding:8px;">Total Fees</th>
+                    <th style="border:1px solid #ccc; padding:8px;">Paid Fees</th>
+                    <th style="border:1px solid #ccc; padding:8px;">Discount</th>
+                    <th style="border:1px solid #ccc; padding:8px;">Pending Fees</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td style="border:1px solid #ccc; padding:8px;">{{ forloop.counter }}</td>
+                    <td style="border:1px solid #ccc; padding:8px;">{{ row.name }}</td>
+                    <td style="border:1px solid #ccc; padding:8px;">{{ row.total_fees }}</td>
+                    <td style="border:1px solid #ccc; padding:8px;">{{ row.paid_fees }}</td>
+                    <td style="border:1px solid #ccc; padding:8px;">{{ row.discount }}</td>
+                    <td style="border:1px solid #ccc; padding:8px; color:red;"><strong>{{ row.pending }}</strong></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p style="margin-top:20px;">Thank you.</p>
+    </div>
+</body>
+</html>

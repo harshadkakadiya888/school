@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fee Reminder</title>
+</head>
+<body style="font-family: Arial, sans-serif; background:#f4f4f4; padding:20px;">
+    <div style="max-width:600px; margin:auto; background:#ffffff; padding:20px; border-radius:8px;">
+        <h2 style="color:#333;">Fee Reminder</h2>
+
+        <p>Hello <strong>{{ student.name }}</strong>,</p>
+
+        <p>This is a reminder regarding your pending fees.</p>
+
+        <table style="width:100%; border-collapse:collapse;">
+            <tr>
+                <td style="border:1px solid #ddd; padding:8px;"><strong>Total Fees</strong></td>
+                <td style="border:1px solid #ddd; padding:8px;">{{ fee.total_fees }}</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ddd; padding:8px;"><strong>Paid Fees</strong></td>
+                <td style="border:1px solid #ddd; padding:8px;">{{ fee.paid_fees }}</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ddd; padding:8px;"><strong>Discount</strong></td>
+                <td style="border:1px solid #ddd; padding:8px;">{{ fee.discount }}</td>
+            </tr>
+            <tr>
+                <td style="border:1px solid #ddd; padding:8px;"><strong>Pending Fees</strong></td>
+                <td style="border:1px solid #ddd; padding:8px; color:red;"><strong>{{ fee.pending }}</strong></td>
+            </tr>
+        </table>
+
+        <p style="margin-top:20px;">Please pay your pending fees as soon as possible.</p>
+        <p>Thank you.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<h2>Bulk Marks Entry</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  <label>Select Exam:</label>
+  <select name="exam">
+    {% for exam in exams %}
+      <option value="{{ exam.id }}">{{ exam.name }}</option>
+    {% endfor %}
+  </select>
+
+  <table border="1">
+    <tr>
+      <th>Name</th>
+      <th>Marks</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+      <td>{{ student.name }}</td>
+      <td>
+        <input type="number" name="marks_{{ student.id }}">
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+  <button type="submit">Save All</button>
+</form>

@@ -26,9 +26,7 @@ INSTALLED_APPS = [
     'fees',
     'marks',
     'standard',
-
     'rest_framework',
-    'storages',   # optional but ok
 ]
 
 # MIDDLEWARE
@@ -108,22 +106,22 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # =============================
 # ✅ LOCAL MEDIA STORAGE (IMPORTANT FIX)
 # =============================
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
-# STORAGES = {
-#     "default": {
-#         "BACKEND": "django.core.files.storage.FileSystemStorage",
-#     },
-#     "staticfiles": {
-#         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-#     },
-# }
-
-# AWS S3 SETTINGS
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
 
 # AWS S3 SETTINGS
 
+# AWS S3 SETTINGS
+'''
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
@@ -139,7 +137,7 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
-}
+}'''
 # =============================
 # DEFAULT FIELD
 # =============================

@@ -8,3 +8,4 @@ psutil
 paramiko
 django-storages
 boto3
+Pillow

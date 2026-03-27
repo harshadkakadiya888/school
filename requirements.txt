@@ -1,0 +1,8 @@
+Django
+djangorestframework
+django-cors-headers
+djangorestframework-simplejwt
+python-dotenv
+gunicorn
+psutil
+paramiko
